@@ -34,25 +34,26 @@ void BinaryCalculator::incrementByOne()
     
     // If the for-block above's been broken by
     // the occurrence of a bit that's free,
-    // flip it on then return ...
+    // flip it on ...
     if (pins[i] != true) {
         digitalWrite(pins[i], HIGH);
 	pins[i] = true;
+    }
+    
+    /*
+    // Else, the for-block above's been broken
+    // by i to be beyond the last position available
+    else {
+        // Do nothing ...
+    }
+    */
+    
+    // Hence flip off every bit previous to i ...
+    for (; i >= 0; i--) {
+        digitalWrite(pins[i], LOW);
+	pins[i] = false;
 	return;
     }
-    
-    // Else, if the for-block above's been broken
-    // by i to be beyond the last position available
-    // flip every bit off, setting the calculator
-    // at zero ...
-    else {
-        for (; i >= 0; i--) {
-	    digitalWrite(pins[i], LOW);
-	    pins[i] = false;
-	    return;
-	}
-    }
-    
     
      
 }
