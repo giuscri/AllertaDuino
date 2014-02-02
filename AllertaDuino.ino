@@ -11,8 +11,8 @@ PIR p(2);
 // BinaryCalculator-obj that shows
 // results at led's wired at pins
 // 3, 4, 5, 6 and 7 ...
-int pins[5] = {3, 4, 5, 6, 7};
-BinaryCalculator b(5, pins);
+int pins[] = {3, 4, 5, 6, 7};
+BinaryCalculator b(pins);
 
 void setup() {
     Serial.begin(9600);
