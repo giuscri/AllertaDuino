@@ -21,7 +21,7 @@ void BinaryCalculator::incrementByOne()
     // If bit at pos #0 is off, flip
     // it on, then return ...
     if (pins[0] != true) {
-        digitalWrite(pins[0] = true;
+        digitalWrite(pins[0], HIGH);
 	pins[0] = true;
 	return;
     }
