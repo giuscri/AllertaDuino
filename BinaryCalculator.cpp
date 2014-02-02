@@ -29,7 +29,7 @@ void BinaryCalculator::incrementByOne()
     // Else, search for the first bit that's
     // off, then set i at that position ...
     int i;
-    for (i = 1; i < sizeof pins && pins[i++] != false;)
+    for (i = 1; i < sizeof pins && pins[i] != false; i++)
         ;
     
     // If the for-block above's been broken by
