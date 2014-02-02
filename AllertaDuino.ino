@@ -23,7 +23,7 @@ void loop() {
 
     for (; !p.motionDetected(); p.detectMotion());
     
-    Serial.println("Motion dected!");
+    Serial.println("Motion detected!");
     
     b.incrementByOne();
     
