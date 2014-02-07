@@ -9,5 +9,5 @@ every make/build task from the IDE the same way you'd compile sketch
 with no lib's.
 
 Since I'm not that fluent in C++ wherever you find something strange
-...that's *not* writing style, it's simply an error. Feel free to
+...that's **not** writing style, it's simply an error. Feel free to
 point me improvements.
