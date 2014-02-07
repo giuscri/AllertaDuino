@@ -7,7 +7,7 @@ BinaryCalculator::BinaryCalculator(int* pins)
 
     this->pins = pins;
 
-    for (int i = 0; i < sizeof pins; i++) {
+    for (int i = 0; i < sizeof(pins) / sizeof(int); i++) {
         pinMode(pins[i], OUTPUT);
         digitalWrite(pins[i], LOW);
         pins[i] = false;
@@ -29,7 +29,7 @@ void BinaryCalculator::incrementByOne()
     // Else, search for the first bit that's
     // off, then set i at that position ...
     int i;
-    for (i = 1; i < sizeof pins && pins[i] != false; i++)
+    for (i = 1; i < sizeof(pins) / sizeof(int) && pins[i] != false; i++)
         ;
     
     // If the for-block above's been broken by
