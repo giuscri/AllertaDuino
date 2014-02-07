@@ -10,6 +10,7 @@ class PIR
 
     public:
         //...
+	void wait(int sec);
 	void detectMotion();
 	bool motionDetected();
 	PIR(int inputPin);
@@ -20,4 +21,4 @@ class PIR
 
 };
 
-#endif
+#endif  /* PIR_H */

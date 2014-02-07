@@ -9,23 +9,22 @@ PIR::PIR(int inputPin)
     this->inputPin = inputPin;
     pinMode(this->inputPin, INPUT);
 
-    /*
     // Maybe we need ~1sec for the sensor
     // to give useful msg's ...
-    delay(1500);
-    */
+    //wait(30);
     
-    this->motionDetectedFlag = false;
+    motionDetectedFlag = false;
 }
 
 // This function makes the PIR listen
 // hence update the motionDetectedFlag ...
 void PIR::detectMotion()
 {
-    if (digitalRead(this->inputPin) == LOW)
-        this->motionDetectedFlag = false;
+    if (digitalRead(inputPin) == LOW)
+        motionDetectedFlag = true;
     else
-        this->motionDetectedFlag = true;
+        motionDetectedFlag = false;
+
 }
 
 
@@ -33,7 +32,14 @@ void PIR::detectMotion()
 // motionDetected flag ...
 bool PIR::motionDetected()
 {
-    bool out = this->motionDetectedFlag;
-    this->motionDetectedFlag = false;
+    bool out = motionDetectedFlag;
+    motionDetectedFlag = false;
     return out;
+
+    //return motionDetectedFlag;
+}
+
+void PIR::wait(int sec)
+{
+    delay(sec * 1000);
 }

@@ -10,11 +10,13 @@ class BinaryCalculator
 
     public:
         //...
+        //void print();
         void incrementByOne();
-        BinaryCalculator(int* pins);
+        BinaryCalculator(int* pins, int pins_length);
 
     private:
         int* pins;
+        int pins_length;
 
 };
 

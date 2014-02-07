@@ -2,12 +2,13 @@
 
 #include "BinaryCalculator.h"
 
-BinaryCalculator::BinaryCalculator(int* pins)
+BinaryCalculator::BinaryCalculator(int* pins, int pins_length)
 {
 
     this->pins = pins;
+    this->pins_length = pins_length;
 
-    for (int i = 0; i < sizeof pins; i++) {
+    for (int i = 0; i < pins_length; i++) {
         pinMode(pins[i], OUTPUT);
         digitalWrite(pins[i], LOW);
         pins[i] = false;
@@ -29,9 +30,10 @@ void BinaryCalculator::incrementByOne()
     // Else, search for the first bit that's
     // off, then set i at that position ...
     int i;
-    for (i = 1; i < sizeof pins && pins[i] != false; i++)
+    for (i = 1; i < pins_length && pins[i] != false; i++)
         ;
-    
+
+   
     // If the for-block above's been broken by
     // the occurrence of a bit that's free,
     // flip it on ...
@@ -47,13 +49,23 @@ void BinaryCalculator::incrementByOne()
         // Do nothing ...
     }
     */
-    
+   
     // Hence flip off every bit previous to i ...
-    for (; i >= 0; i--) {
+    for (; --i >= 0;) {
         digitalWrite(pins[i], LOW);
 	pins[i] = false;
-	return;
     }
+
+    return;
     
      
 }
+
+/*
+// Testing procedure ...
+void BinaryCalculator::print() {
+    for (int i = 0; i < pins_length; i++)
+        Serial.println(pins[i]);
+    Serial.println("====");
+}
+*/
