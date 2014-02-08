@@ -1,13 +1,8 @@
 AllertaDuino
 ============
 
-Files are collected here just for peer review. If you need to use them
-create a folder for both `<Class-name>.h` `<Class-name>.cpp` and make sure
-its path is the same for other libraries your IDE is already using
-(to me that means `/usr/share/arduino/libraries`). Then you can manage
-every make/build task from the IDE the same way you'd compile sketch
-with no lib's.
+Files are collected here just for peer review. Since I'm not that fluent in C++ wherever you find something strange ...that's **not** writing style, it's simply an error. Feel free to point me improvements.
 
-Since I'm not that fluent in C++ wherever you find something strange
-...that's **not** writing style, it's simply an error. Feel free to
-point me improvements.
+If you want to use it you can [download](https://github.com/giuscri/AllertaDuino/archive/master.zip "Download ZIP") the zip archive, hence when opening the IDE and import this library. For more detailed info's see the official [Arduino guide](http://arduino.cc/en/Guide/Libraries), where you can find also an different procedure if the one described above does not work.
+
+For better understanding libraries, look at the examples source code -- which you can run from the IDE as well once library's been imported.
